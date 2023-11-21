@@ -5,6 +5,8 @@
 
 using DynamicData;
 using DynamicData.Binding;
+using ReactiveUI.Tests.WhenAny.Mockups;
+using static ReactiveUI.Tests.WhenAny.Mockups.NullChildTestFixture;
 
 namespace ReactiveUI.Tests;
 
@@ -135,5 +137,18 @@ public class WhenAnyObservableTests
 
         fixture.MyListOfInts = null;
         Assert.Equal(1, output.Count);
+    }
+
+    [Fact]
+    public void WhenAnyObservableWithChildNullShouldUnsubscribeAndShouldNotProduce2()
+    {
+        var container = NullChildTestFixture.Instance();
+        container.WhenAnyObservable(x => x.Child.Foo).Subscribe(i => Assert.NotEqual(2, i));
+
+        var child = new Child();
+        container.Child = child;
+        child.Foo.OnNext(1);
+        container.Child = null!;
+        child.Foo.OnNext(2);
     }
 }
