@@ -1,5 +1,7 @@
 ﻿$Archs = {"Net40", "Net45"}
-$Projects = {"ReactiveUI", "ReactiveUI.Testing", "ReactiveUI.Xaml", "ReactiveUI.Routing", "ReactiveUI.Blend", "ReactiveUI.Cocoa", "ReactiveUI.Gtk", "ReactiveUI.Android", "ReactiveUI.NLog", "ReactiveUI.Mobile"}
+
+## $Projects = {"ReactiveUI", "ReactiveUI.Testing", "ReactiveUI.Xaml", "ReactiveUI.Routing", "ReactiveUI.Blend", "ReactiveUI.Cocoa", "ReactiveUI.Gtk", "ReactiveUI.Android", "ReactiveUI.NLog", "ReactiveUI.Mobile"}
+$Projects = {"ReactiveUI", "ReactiveUI.Xaml", "ReactiveUI.Routing", "ReactiveUI.Blend", "ReactiveUI.NLog"}
 
 $SlnFileExists = Test-Path ".\ReactiveUI.sln"
 if ($SlnFileExists -eq $False) {
