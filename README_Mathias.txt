@@ -24,6 +24,28 @@ Open it in 2017 and ONLY restore the NuGet poackages?
 This gives you a NuGet.Config format errior : does not contain the expected root element configuration.
 So I hid Nuget.Config and tried again and it nearly worked and I get the error with the locked MS build tasks again.
 
+Tried restarting and coming back and the package is immediately locked again. 
+
+Let's clear out the packages directory and try again. 
+That seems to work; delete the project packages directory, open again and immediately restore packages.
+
+Shall we build in 2017 or 2012? Let's continue with 2017 we can always go back if we need to!
+
+VS2017 - Debug, Mixed Platforms, Builds fine. 
+VS2017 - Batch build EVERYTHING works fine; except tests!
+
+So now we need to try to work out how to build the NuGet packages?
+
+Just for a laugh, let's try running the makerelease.ps1 file and see if it works better.
+
+Run x86 Command Tools Prompt for VS2017 as Administrator...
+cd C:\Users\Mathias\source\repos\Projects\Rider\ReactiveUI
+
+Cannot seem to get PowerShell running.
+
+Run native PowerShell
+cd C:\Users\Mathias\source\repos\Projects\Rider\ReactiveUI
+
 
 Building under PowewrShell
 --------------------------
